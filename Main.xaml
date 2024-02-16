@@ -1,13 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inFilename" Type="InArgument(x:String)" />
     <x:Property Name="outFilename" Type="OutArgument(x:String)" />
-    <x:Property Name="outResultsTB" Type="InOutArgument(x:String)" />
+    <x:Property Name="outResultsTB" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>608,3264</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>608,3454.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -138,7 +138,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="588.8,3199.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="588.8,3389.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomy" />
       <Variable x:TypeArguments="x:String" Name="strDocPath">
@@ -151,7 +151,7 @@
       <Variable x:TypeArguments="p8:ClassificationResult[]" Name="classificationResults" />
       <Variable x:TypeArguments="p8:ExtractionResult" Name="extractionResults" />
       <Variable x:TypeArguments="p8:ExtractionResult" Name="ValidatedResults" />
-      <Variable x:TypeArguments="sd2:DataSet" Name="DatasetResults" />
+      <Variable x:TypeArguments="sd:DataSet" Name="DatasetResults" />
       <Variable x:TypeArguments="x:String" Name="out">
         <Variable.Default>
           <Literal x:TypeArguments="x:String">out\</Literal>
@@ -175,12 +175,12 @@
     <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="526.4,105.6" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[taxonomy]" />
     <p:DigitizeDocument ApplyOcrMigrated="False" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[outFilename]" DocumentText="[strDocText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="526.4,300" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
       <p:DigitizeDocument.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
+        <ActivityFunc x:TypeArguments="sd1:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
           <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="D5A4TjjebVisyDbq6HcH+jtSWkF6w2BjR9VRVkuICyKs+0yol7Oqeabx1FlugPkli+ExZAJVKVP2EgZu73gziQ==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
             <p1:UiPathDocumentOCR.Image>
-              <InArgument x:TypeArguments="sd:Image">
-                <DelegateArgumentValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_1">
-                  <DelegateInArgument x:TypeArguments="sd:Image" x:Name="__ReferenceID0" Name="Image" />
+              <InArgument x:TypeArguments="sd1:Image">
+                <DelegateArgumentValue x:TypeArguments="sd1:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_1">
+                  <DelegateInArgument x:TypeArguments="sd1:Image" x:Name="__ReferenceID0" Name="Image" />
                 </DelegateArgumentValue>
               </InArgument>
             </p1:UiPathDocumentOCR.Image>
@@ -301,13 +301,12 @@
         </p6:MachineLearningExtractor>
       </p5:DataExtractionScope.Extractors>
     </p5:DataExtractionScope>
-    <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" AutomaticExtractionResults="[extractionResults]" DisplayName="Present Validation Station" DocumentObjectModel="[DOM]" DocumentPath="[outFilename]" DocumentText="[strDocText]" sap:VirtualizedContainerService.HintSize="526.4,372" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" ShowOnlyRelevantPageRange="False" Taxonomy="[taxonomy]" ValidatedExtractionResults="[ValidatedResults]" />
-    <p5:ExportExtractionResults DataSet="[DatasetResults]" DisplayName="Export Extraction Results" ExtractionResult="[ValidatedResults]" sap:VirtualizedContainerService.HintSize="526.4,176.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_2" IncludeConfidence="False" IncludeOCRConfidence="False" />
-    <ui:ForEach x:TypeArguments="sd2:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="526.4,505.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DatasetResults.Tables]">
+    <p5:ExportExtractionResults DataSet="[DatasetResults]" DisplayName="Export Extraction Results" ExtractionResult="[extractionResults]" sap:VirtualizedContainerService.HintSize="526.4,176.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_2" IncludeConfidence="False" IncludeOCRConfidence="False" />
+    <ui:ForEach x:TypeArguments="sd:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="526.4,505.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DatasetResults.Tables]">
       <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="sd2:DataTable">
+        <ActivityAction x:TypeArguments="sd:DataTable">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd2:DataTable" Name="currentItem" />
+            <DelegateInArgument x:TypeArguments="sd:DataTable" Name="currentItem" />
           </ActivityAction.Argument>
           <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="492.8,317.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
@@ -327,6 +326,18 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ReadRange DataTable="{x:Null}" Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="526.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[out + &quot;Report.xlsx&quot;]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[outResultsTB]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="526.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[out + &quot;Report.xlsx&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="526.4,562.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,484" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" AutomaticExtractionResults="[extractionResults]" DisplayName="Present Validation Station" DocumentObjectModel="[DOM]" DocumentPath="[outFilename]" DocumentText="[strDocText]" sap:VirtualizedContainerService.HintSize="387.2,372" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" ShowOnlyRelevantPageRange="False" Taxonomy="[taxonomy]" ValidatedExtractionResults="[ValidatedResults]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
