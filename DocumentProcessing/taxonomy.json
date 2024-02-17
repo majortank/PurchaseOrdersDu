@@ -4,8 +4,8 @@
     {
       "Connections": [],
       "DocumentTypeId": "Finance.Procurement.PurchaseOrder",
-      "Group": "Finance",
-      "Category": "Procurement",
+      "Group": "Accounts Receivable",
+      "Category": "Order to Cash",
       "Name": "Purchase Order",
       "OptionalUniqueIdentifier": "",
       "TypeField": {
@@ -304,8 +304,8 @@
     {
       "Connections": [],
       "DocumentTypeId": "Finance.Procurement.Order",
-      "Group": "Finance",
-      "Category": "Procurement",
+      "Group": "Accounts Receivable",
+      "Category": "Order to Cash",
       "Name": "Order",
       "OptionalUniqueIdentifier": "",
       "TypeField": {
@@ -604,9 +604,9 @@
   ],
   "Groups": [
     {
-      "Name": "Finance",
+      "Name": "Accounts Receivable",
       "Categories": [
-        "Procurement"
+        "Order to Cash"
       ]
     }
   ],
