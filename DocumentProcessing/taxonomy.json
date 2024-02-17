@@ -37,7 +37,7 @@
         },
         {
           "FieldId": "Finance.Procurement.PurchaseOrder.CompanyTradingName",
-          "FieldName": "Company Trading Name",
+          "FieldName": "Date",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -59,7 +59,7 @@
         },
         {
           "FieldId": "Finance.Procurement.PurchaseOrder.VendorName",
-          "FieldName": "Vendor Name",
+          "FieldName": "Client Name",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -81,7 +81,7 @@
         },
         {
           "FieldId": "Finance.Procurement.PurchaseOrder.NetAmount",
-          "FieldName": "Net Amount",
+          "FieldName": "Client Address",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -103,7 +103,7 @@
         },
         {
           "FieldId": "Finance.Procurement.PurchaseOrder.TotalAmount",
-          "FieldName": "Total Amount",
+          "FieldName": "Vendor Name",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -125,7 +125,7 @@
         },
         {
           "FieldId": "Finance.Procurement.PurchaseOrder.PaymentTerms",
-          "FieldName": "Payment Terms",
+          "FieldName": "Vendor Address",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -139,6 +139,160 @@
             {
               "Key": "Hotkey",
               "Value": "y"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.ShippingName",
+          "FieldName": "Shipping Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#279aab"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "h"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.ShippingAddress",
+          "FieldName": "Shipping Address",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#e422cf"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "g"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.PaymentTerms_1",
+          "FieldName": "Payment Terms",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#97c497"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "m"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.DeliveryDate",
+          "FieldName": "Delivery Date",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#ab44f6"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "l"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.NetAmount_1",
+          "FieldName": "Net Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#fd15c0"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "q"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.TaxAmount",
+          "FieldName": "Tax Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#84e042"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "x"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.PurchaseOrder.TotalAmount_1",
+          "FieldName": "Total Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#15a662"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "w"
             }
           ],
           "RuleSet": null,
@@ -161,7 +315,7 @@
       "Fields": [
         {
           "FieldId": "Finance.Procurement.Order.ORDERNO",
-          "FieldName": "ORDER NO",
+          "FieldName": "Purchase Order Number",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -183,7 +337,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.COMPANY",
-          "FieldName": "COMPANY NAME",
+          "FieldName": "Date",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -205,7 +359,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.SUPPLIERNAME",
-          "FieldName": "SUPPLIER NAME",
+          "FieldName": "Client Name",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -227,7 +381,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.SUPPLIERNO",
-          "FieldName": "SUPPLIER NO",
+          "FieldName": "Client Address",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -249,7 +403,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.PAGETOTAL",
-          "FieldName": "PAGE TOTAL",
+          "FieldName": "Vendor Name",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -271,7 +425,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.GRANDTOTAL",
-          "FieldName": "GRAND TOTAL",
+          "FieldName": "Vendor Address",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -293,7 +447,7 @@
         },
         {
           "FieldId": "Finance.Procurement.Order.PAYMENTTERMS",
-          "FieldName": "PAYMENT TERMS",
+          "FieldName": "Shipping Name",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -307,6 +461,138 @@
             {
               "Key": "Hotkey",
               "Value": "y"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.ShippingAddress",
+          "FieldName": "Shipping Address",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#fda891"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "h"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.PaymentTerms_1",
+          "FieldName": "Payment Terms",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#5fcfb9"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "m"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.DeliverybyDate",
+          "FieldName": "Delivery by Date",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#87c28d"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "v"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.NetAmount",
+          "FieldName": "Net Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#b5a027"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "q"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.TaxAmount",
+          "FieldName": "Tax Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#6de127"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "x"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        },
+        {
+          "FieldId": "Finance.Procurement.Order.TotalAmount",
+          "FieldName": "Total Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#2bbdad"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "w"
             }
           ],
           "RuleSet": null,
