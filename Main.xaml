@@ -143,7 +143,7 @@
       <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomy" />
       <Variable x:TypeArguments="x:String" Name="strDocPath">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">sampleData\PO- NFR SKA-004288.pdf</Literal>
+          <Literal x:TypeArguments="x:String">C:\Users\TangiKuu\Documents\UiPath\BankStatements\sampleData\Tankiso Thebe - account_statement.pdf</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="strDocText" />
@@ -152,11 +152,7 @@
       <Variable x:TypeArguments="p8:ExtractionResult" Name="extractionResults" />
       <Variable x:TypeArguments="p8:ExtractionResult" Name="ValidatedResults" />
       <Variable x:TypeArguments="sd2:DataSet" Name="DatasetResults" />
-      <Variable x:TypeArguments="x:String" Name="out">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">out\</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="out\" Name="out" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -195,7 +191,7 @@
       </ui:CommentOut.Body>
     </ui:CommentOut>
     <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="531.2,105.6" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[taxonomy]" />
-    <p:DigitizeDocument ApplyOcrMigrated="False" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[strDocPath]" DocumentText="[strDocText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="531.2,300" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+    <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[strDocPath]" DocumentText="[strDocText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="531.2,300" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
       <p:DigitizeDocument.OCREngine>
         <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
           <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="D5A4TjjebVisyDbq6HcH+jtSWkF6w2BjR9VRVkuICyKs+0yol7Oqeabx1FlugPkli+ExZAJVKVP2EgZu73gziQ==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
